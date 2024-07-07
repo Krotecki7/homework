@@ -18,8 +18,8 @@ print(mask_account_card("Счет 64686473678894779589"))
 
 def get_date(date_string: str) -> str:
     """Функция для возврата даты в привычном значении"""
-    date = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
-    return date.strftime('%d.%m.%Y')
+    date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f")
+    return date.strftime("%d.%m.%Y")
 
 
-print(get_date('2024-03-11T02:26:18.671407'))
+print(get_date("2024-03-11T02:26:18.671407"))
