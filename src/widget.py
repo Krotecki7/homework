@@ -4,7 +4,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(user_card: str) -> str | None:
-    """Функция, обрабатывающая информацию о картах"""
+    """Функция получает номер счета или название и номер карты, и возвращает их в замаскированном виде."""
     if "Счет" in user_card:
         account = user_card[-20:]
         return f"{user_card[:-20]} {get_mask_account(account)}"
@@ -13,11 +13,11 @@ def mask_account_card(user_card: str) -> str | None:
         return f"{user_card[:-16]} {get_mask_card_number(card_number)}"
 
 
-print(mask_account_card("Счет 64686473678894779589"))
+print(mask_account_card("visa 1234567890123456"))
 
 
 def get_date(date_string: str) -> str:
-    """Функция для возврата даты в привычном значении"""
+    """Функция для возврата даты в привычном значении (день, месяц, год) из получаемой строки"""
     date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f")
     return date.strftime("%d.%m.%Y")
 

@@ -1,13 +1,14 @@
-def filter_by_state(dictionary: list, state="EXECUTED") -> list:
-    """Функция, которая возвращает новый словарь по заданному ключу"""
-    new_dict = []
-    for member in dictionary:
-        if member["state"] == state:
-            new_dict.append(member)
-    return new_dict
+def filter_by_state(list_of_dict: list, state: str = "EXECUTED") -> list:
+    """Функция фильтрует список словарей по указанному значению ключа 'state'. По умолчанию 'state'='EXECUTED'."""
+    filtered_list = []
+    for dict_item in list_of_dict:
+        if dict_item["state"] == state:
+            filtered_list.append(dict_item)
+    return filtered_list
 
 
-def sort_by_date(dictionary: list) -> list:
-    """Фукция, сортирующая список словарей по дате"""
-    sorted_list = sorted(dictionary, key=lambda x: x["date"], reverse=True)
-    return sorted_list
+def sort_by_date(dictionary: list, ascending: bool = True) -> list:
+    """Фукция, возвращающая новый список словарей, отсортированный по дате.
+    По умолчанию сортирует от более старой даты к новой """
+    sorted_dicts = sorted(dictionary, key=lambda x: x["date"], reverse=ascending)
+    return sorted_dicts
