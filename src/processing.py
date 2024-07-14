@@ -9,5 +9,5 @@ def filter_by_state(dictionary: list, state="EXECUTED") -> list:
 
 def sort_by_date(dictionary: list) -> list:
     """Фукция, сортирующая список словарей по дате"""
-    sorted_list = sorted(dictionary, key=lambda x: x["date"])
+    sorted_list = sorted(dictionary, key=lambda x: x["date"], reverse=True)
     return sorted_list
