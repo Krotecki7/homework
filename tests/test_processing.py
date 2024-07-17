@@ -10,7 +10,6 @@ list_of_dict = [
 ]
 
 
-# noinspection PyTypeChecker
 @pytest.mark.parametrize(
     "list_of_dict, state, expected",
     [
