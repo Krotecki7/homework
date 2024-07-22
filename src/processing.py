@@ -9,6 +9,6 @@ def filter_by_state(list_of_dict: list, state: str = "EXECUTED") -> list | None:
 
 def sort_by_date(dictionary: list, ascending: bool = True) -> list:
     """Фукция, возвращающая новый список словарей, отсортированный по дате.
-    По умолчанию сортирует от более старой даты к новой """
+    По умолчанию сортирует от более старой даты к новой"""
     sorted_dicts = sorted(dictionary, key=lambda x: x["date"], reverse=ascending)
     return sorted_dicts

@@ -1,10 +1,12 @@
+from typing import Any
+
 import pytest
 
-from src.generators import filter_by_currency, card_number_generator, transaction_descriptions
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 @pytest.fixture
-def filter_():
+def filter_() -> list:
     return [
         {
             "id": 939719570,
@@ -55,31 +57,31 @@ def filter_():
 
 
 @pytest.fixture
-def currency_():
+def currency_() -> str:
     return "USD"
 
 
 @pytest.fixture
-def currency_1():
+def currency_1() -> str:
     return "руб."
 
 
-def test_filter_by_currency(filter_, currency_):
-    gen = filter_by_currency(filter_, currency_)
+def test_filter_by_currency(filter_: list, currency_: str) -> None:
+    gen: Any = filter_by_currency(filter_, currency_)
     assert next(gen)["id"] == 939719570
 
 
-def test_filter_by_currency_1(filter_, currency_1):
-    gen = filter_by_currency(filter_, currency_1)
+def test_filter_by_currency_1(filter_: list, currency_1: str) -> None:
+    gen: Any = filter_by_currency(filter_, currency_1)
     assert next(gen)["id"] == 873106923
 
 
-def test_transaction_descriptions(filter_):
-    gen = transaction_descriptions(filter_)
+def test_transaction_descriptions(filter_: list) -> None:
+    gen: Any = transaction_descriptions(filter_)
     assert next(gen) == "Перевод организации"
     assert next(gen) == "Перевод со счета на счет"
 
 
 def test_card_number_generator() -> None:
-    gen = card_number_generator(start=1, stop=9999999999999999)
+    gen: Any = card_number_generator(start=1, stop=9999999999999999)
     assert next(gen) == "0000 0000 0000 0001"
