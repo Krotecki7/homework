@@ -1,9 +1,12 @@
 def filter_by_currency(transactions: list, currency: str = 'USD'):
     """Функция, которая принимает список словарей, представляющих транзакции.
     И поочередно выдает транзакции, где валюта соответствует заданной('currency')."""
-    for item in transactions:
-        if item["operationAmount"]["currency"]["name"] == currency:
-            yield item
+    try:
+        for item in transactions:
+            if item["operationAmount"]["currency"]["name"] == currency:
+                yield item
+    except StopIteration:
+        print("Отсутствует один из параметров.")
 
 
 def transaction_descriptions(transactions: list):
@@ -13,6 +16,7 @@ def transaction_descriptions(transactions: list):
 
 
 def card_number_generator(start, stop):
+    """ Генаратор выдачи номеров банковских карт в формате XXXX XXXX XXXX XXXX"""
     for i in range(start, stop + 1):
         card_number = str(i)
         while len(card_number) < 16:
