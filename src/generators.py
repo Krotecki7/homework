@@ -4,12 +4,15 @@ from typing import Generator, Union
 def filter_by_currency(transactions: list, currency: str = "USD") -> Union[Generator]:
     """Функция, которая принимает список словарей, представляющих транзакции.
     И поочередно выдает транзакции, где валюта соответствует заданной('currency')."""
+#    for item in transactions:
     try:
-        for item in transactions:
-            if item["operationAmount"]["currency"]["name"] == currency:
-                yield item
+        for value in transactions:
+            if value["operationAmount"]["currency"]["name"] == currency:
+                yield value
+            else:
+                raise StopIteration
     except StopIteration:
-        print("Отсутствует один из параметров.")
+        print("Не найден currency")
 
 
 def transaction_descriptions(transactions: list) -> Union[Generator]:
