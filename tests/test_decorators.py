@@ -16,8 +16,8 @@ def test_log_2():
         my_func()
 
 
-def test_log_3(capsys):
-
+def test_log_3():
     my_func(2, 1)
-    captured = capsys.readouterr()
-    assert captured.out == ""
+    with open('log.txt', 'r', encoding='utf-8') as file:
+        log_content = file.read()
+    assert "my function ok." in log_content
