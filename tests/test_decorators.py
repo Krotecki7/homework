@@ -18,6 +18,6 @@ def test_log_2():
 
 def test_log_3():
     my_func(2, 1)
-    with open('log.txt', 'r', encoding='utf-8') as file:
+    with open("log.txt", "r", encoding="utf-8") as file:
         log_content = file.read()
     assert "my function ok." in log_content

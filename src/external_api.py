@@ -20,4 +20,4 @@ def sum_transactions(transaction: dict) -> Any:
         headers = {"apikey": api_key}
         response = requests.get(url, headers=headers)
         result = response.json()
-        return result['result']
+        return result["result"]
