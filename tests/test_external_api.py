@@ -1,8 +1,8 @@
 import os
-
-import pytest
 from typing import Any
 from unittest.mock import patch
+
+import pytest
 
 from src.external_api import sum_transactions
 
@@ -10,7 +10,7 @@ api_key = os.getenv("API_KEY")
 
 
 @pytest.fixture
-def transaction():
+def transaction() -> dict:
     return {
         "id": 441945886,
         "state": "EXECUTED",
@@ -27,8 +27,7 @@ def test_sum_transaction_2(transaction: dict) -> Any:
 
 
 @patch("requests.get")
-def test_sum_transactions_1(mock_get):
-    mock_get.return_value.json.return_value =
-    assert sum_transactions() ==
-    mock_get.assert_called_once_with('https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=20',
-                                     headers={'api_key': api_key})
+def test_sum_transactions_1(mock_get: Any) -> Any:
+    mock_get.return_value.json.return_value = {"result": 100.0}
+    assert sum_transactions({"operationAmount": {"amount": 100, "currency": {"code": "test"}}}) == 100.0
+    mock_get.assert_called_once()
