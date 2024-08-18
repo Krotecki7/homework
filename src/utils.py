@@ -27,3 +27,6 @@ def get_data(path_to_file: str) -> Any:
     except (FileNotFoundError, json.JSONDecodeError):
         utils_logger.error("Ошибка чтения")
         return []
+
+
+print(get_data(PATH_TO_FILE))

@@ -1,3 +1,4 @@
-2024-08-11 23:10:55,679, utils, INFO: Открываем файл data/operations.json для чтения
-2024-08-11 23:10:55,682, utils, INFO: Открываем файл data/non_existent_file.json для чтения
-2024-08-11 23:10:55,682, utils, ERROR: Ошибка чтения
+2024-08-18 19:50:49,458, utils, INFO: Открываем файл C:\Users\krote\PycharmProjects\pythonProject5\data\operations.json для чтения
+2024-08-18 19:50:49,461, utils, INFO: Открываем файл data/operations.json для чтения
+2024-08-18 19:50:49,463, utils, INFO: Открываем файл data/non_existent_file.json для чтения
+2024-08-18 19:50:49,463, utils, ERROR: Ошибка чтения
