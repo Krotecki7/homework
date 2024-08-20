@@ -16,3 +16,57 @@ my function ok.
 my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
 my function ok.
 my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
+my function ok.
+my_function error: my_func() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}my function ok.
