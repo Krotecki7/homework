@@ -23,3 +23,10 @@ def get_data_from_xlsx(path_to_file: str) -> list:
         return excel_data.to_dict(orient='records')
     except FileNotFoundError:
         return []
+
+
+def search_by_str(data, search_str):
+    filtered_transactions = []
+    for transaction in data:
+        if re.findall(search_str, transaction["description"], flags=re.IGNORECASE):
+            filtered_transactions.append(transaction)

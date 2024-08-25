@@ -15,8 +15,6 @@ def mask_account_card(user_card: str) -> str | None:
 
 def get_date(date_string: str) -> str | None:
     """Функция для возврата даты в привычном значении (день, месяц, год) из получаемой строки"""
-    date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f")
+    date = (datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f") or
+            datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%SZ"))
     return date.strftime("%d.%m.%Y")
-
-
-print(get_date("2024-03-11T02:26:18.671407"))
