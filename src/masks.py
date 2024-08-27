@@ -13,7 +13,7 @@ masks_logger.addHandler(file_handler)
 masks_logger.setLevel(logging.DEBUG)
 
 
-def get_mask_card_number(card_number: str) -> str | ValueError:
+def get_mask_card_number(card_number: str) -> str | None:
     """Функция маcкировки номера банковской карты"""
     masks_logger.info("Получаем данные карты")
     try:
@@ -24,10 +24,10 @@ def get_mask_card_number(card_number: str) -> str | ValueError:
             raise ValueError("Неверный номер карты")
     except ValueError as ex:
         masks_logger.error(f"Произошла ошибка: {ex}")
-        return ex
+        return f"Произошла ошибка {ex}"
 
 
-def get_mask_account(account_number: str) -> str | ValueError:
+def get_mask_account(account_number: str) -> str | None:
     """Функция маскировки лицевого счета"""
     masks_logger.info("Получаем данные лицевого счета")
     try:
@@ -38,4 +38,4 @@ def get_mask_account(account_number: str) -> str | ValueError:
             raise ValueError("Неверный номер лицевого счета")
     except ValueError as ex:
         masks_logger.error(f"Произошла ошибка: {ex}")
-        return ex
+        return f"Произошла ошибка {ex}"
