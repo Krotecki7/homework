@@ -6,8 +6,12 @@ def filter_by_currency(transactions: list, currency: str = "USD") -> list:
     И поочередно выдает транзакции, где валюта соответствует заданной('currency')."""
     filtered_transactions = []
     for value in transactions:
-        if value["operationAmount"]["currency"]["code"] == currency:
-            filtered_transactions.append(value)
+        if value.get("operationAmount") is not None:
+            if value["operationAmount"]["currency"]["code"] == currency:
+                filtered_transactions.append(value)
+        else:
+            if value.get("currency_code") == currency:
+                filtered_transactions.append(value)
     return filtered_transactions
 
 

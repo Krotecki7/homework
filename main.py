@@ -36,7 +36,7 @@ c банковскими транзакциями.
         data = get_data_from_xlsx(path_to_xlsx_file)
 
     state_message = """Введите статус, по которому необходимо выполнить фильтрацию.
-Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING:\n"""
+Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING:"""
     state = input(f"{state_message}\n").upper()
     while state not in ["EXECUTED", "CANCELED", "PENDING"]:
         print(f"Статус операции {state} недоступен.\n {state_message}")
@@ -54,7 +54,7 @@ c банковскими транзакциями.
             sorted_filtered_data = sort_by_date(filtered_data, ascending=True)
     elif sort_data == "нет":
         sorted_filtered_data = filtered_data
-    print(sorted_filtered_data)
+
     rub_transactions = input("Выводить только рублевые тразакции? Да/Нет\n").lower()
     if rub_transactions == "да":
         sorted_data_by_rub = filter_by_currency(sorted_filtered_data, "RUB")
@@ -75,17 +75,27 @@ c банковскими транзакциями.
             if value.get("description") == "Открытие вклада":
                 print(
                     f"""{get_date(value.get('date'))} {value.get('description')}
-{mask_account_card(value.get('to'))}
-Сумма: {value["operationAmount"]["amount"] or value.get('amount')}
-{value["operationAmount"]["currency"]["name"] or value.get('currency_name')}"""
+{mask_account_card(value.get('to'))}"""
                 )
+                if value.get("operationAmount") is not None:
+                    print(
+                        f"""Сумма: {value["operationAmount"]["amount"]}
+{value["operationAmount"]["currency"]["name"]}"""
+                    )
+                else:
+                    print(f"Сумма: {value.get("amount")} {value.get("currency_name")}")
             else:
                 print(
                     f"""{get_date(value.get('date'))} {value.get('description')}
-{mask_account_card(value.get('from'))} -> {mask_account_card(value.get('to'))}
-Сумма: {value["operationAmount"]["amount"] or value.get('amount')}
-{value["operationAmount"]["currency"]["name"] or value.get('currency_name')}"""
+{mask_account_card(value.get('from'))} -> {mask_account_card(value.get('to'))}"""
                 )
+                if value.get("operationAmount") is not None:
+                    print(
+                        f"""Сумма: {value["operationAmount"]["amount"]}
+                {value["operationAmount"]["currency"]["name"]}"""
+                    )
+                else:
+                    print(f"Сумма: {value.get("amount")} {value.get("currency_name")}")
     else:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
 
