@@ -1,8 +1,5 @@
-import os
-
 import re
 import pandas as pd
-from pandas import DataFrame
 import json
 import logging
 import os
@@ -41,7 +38,7 @@ def get_data_from_csv(path_to_file: str) -> list:
     """Функция возвращает список словарей из csv-файла"""
     try:
         csv_data = pd.read_csv(path_to_file, delimiter=";")
-        return csv_data.to_dict(orient='records')
+        return csv_data.to_dict(orient="records")
     except FileNotFoundError:
         return []
 
@@ -50,7 +47,7 @@ def get_data_from_xlsx(path_to_file: str) -> list:
     """Функция возвращает список словарей из excel-файла"""
     try:
         excel_data = pd.read_excel(path_to_file)
-        return excel_data.to_dict(orient='records')
+        return excel_data.to_dict(orient="records")
     except FileNotFoundError:
         return []
 
@@ -65,10 +62,10 @@ def search_by_str(data: list[dict], search_str: str) -> list[dict]:
 
 
 def count_operations(data: list[dict], categories: list[str]) -> dict:
-    """Функция для подсчета кол-ва операций в каждой категории """
+    """Функция для подсчета кол-ва операций в каждой категории"""
     counted_categories = []
     for transactions in data:
-        description = transactions.get('description')
+        description = transactions.get("description")
         for category in categories:
             if re.findall(category, str(description), flags=re.IGNORECASE):
                 counted_categories.append(category)

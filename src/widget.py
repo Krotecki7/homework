@@ -16,8 +16,8 @@ def mask_account_card(user_card: str) -> str | None:
 
 def get_date(date_string: str) -> str:
     """Функция для возврата даты в привычном значении (день, месяц, год) из получаемой строки"""
-    pattern_1 = r'\d{4}[-]\d{2}[-]\d{2}\D\d{2}[:]\d{2}[:]\d{2}[.]\d{6}'
-    pattern_2 = r'\d{4}[-]\d{2}[-]\d{2}\D\d{2}[:]\d{2}[:]\d{2}\D'
+    pattern_1 = r"\d{4}[-]\d{2}[-]\d{2}\D\d{2}[:]\d{2}[:]\d{2}[.]\d{6}"
+    pattern_2 = r"\d{4}[-]\d{2}[-]\d{2}\D\d{2}[:]\d{2}[:]\d{2}\D"
     if re.findall(pattern_1, date_string):
         date_search = re.findall(pattern_1, date_string)
         date_new = date_search[0]
